@@ -12,7 +12,7 @@ import { debounceTime } from 'rxjs/operators';
 import { SurveyConfig } from '../../shared/models/survey-config.model';
 import { StorageService, SurveyId } from '../../shared/services/storage.service';
 import { SurveyApiService } from '../../shared/services/survey-api.service';
-import { StarRatingComponent } from '../star-rating/star-rating.component';
+import { StarRatingComponent } from './star-rating.component';
 import { AuthService } from '../../shared/services/auth.service';
 
 @Component({

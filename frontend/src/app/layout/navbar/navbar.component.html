@@ -1,0 +1,41 @@
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="brand" routerLink="/">
+      <img src="free-icon-health-7922906.png" alt="Logo" />
+      <span>Well-Being Analytics</span>
+    </div>
+
+    <ul class="nav-links">
+      <li>
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Опросы
+        </a>
+      </li>
+      <li>
+        <a routerLink="/results" routerLinkActive="active">
+          Результаты
+        </a>
+      </li>
+    </ul>
+
+    <div class="user" *ngIf="auth.isAuthenticated()">
+      <button class="user-trigger" (click)="toggle()">
+        <span class="name">{{ auth.username() }}</span>
+        <span class="chevron">▾</span>
+      </button>
+
+      <div class="dropdown" *ngIf="open">
+        <a *ngIf="auth.role() === 'admin'" routerLink="/admin">
+          Панель администратора
+        </a>
+        <button class="logout" (click)="logout()">
+          Выход
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
