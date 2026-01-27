@@ -1,0 +1,131 @@
+.page {
+  background: linear-gradient(to bottom, #f8faf9 0%, #eef4f2 100%);
+  min-height: 70vh;
+  padding: 3.5rem 1.5rem 0;
+  color: #1a3331;
+}
+
+
+.header {
+  max-width: 960px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.logo-mark {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-width: 100%;
+    object-fit: contain;
+  }
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.subtitle {
+  color: #5a736f;
+  font-size: 1.05rem;
+}
+
+.grid {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(42, 107, 95, 0.06);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+  }
+
+  &.completed {
+    border-color: rgba(34, 197, 94, 0.45);
+    box-shadow:
+      0 6px 24px rgba(34, 197, 94, 0.18),
+      inset 0 0 0 1px rgba(34, 197, 94, 0.15);
+    background: linear-gradient(
+      to bottom,
+      #f0fdf4 0%,
+      #ffffff 45%
+    );
+  }
+
+  &.completed:hover {
+    transform: translateY(-4px);
+  }
+
+  &.completed::after {
+    content: "Пройдено";
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #065f46;
+    background: #dcfce7;
+    padding: 4px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.02em;
+  }
+}
+
+
+.card-visual {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 56px;
+    filter: brightness(0) invert(1);
+  }
+}
+
+.burnout .card-visual {
+  background: linear-gradient(135deg, #2d6b61, #1f4d45);
+}
+
+.stress .card-visual {
+  background: linear-gradient(135deg, #3d6b8a, #2a4d66);
+}
+
+.worklife .card-visual {
+  background: linear-gradient(135deg, #6b7d52, #4d5c3a);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(42, 107, 95, 0.08);
+}
+
+.arrow {
+  font-size: 1.25rem;
+  color: #2a6b5f;
+}

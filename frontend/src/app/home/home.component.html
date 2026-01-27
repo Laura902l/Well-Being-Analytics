@@ -1,0 +1,77 @@
+<main class="page">
+
+  <header class="header">
+    <div class="logo-mark">
+      <img src="quality-of-life.png" alt="Quality of life" />
+    </div>
+
+    <h1>Оценка благополучия сотрудников</h1>
+
+    <p class="subtitle">
+      Анонимные опросы для оценки психологического состояния сотрудников
+    </p>
+  </header>
+
+  <section class="grid">
+
+    <div class="card burnout" [class.completed]="completed().burnout" (click)="open('burnout')">
+
+      <div class="card-visual">
+        <img src="exhaust.png" />
+      </div>
+
+      <div class="card-body">
+        <h3>Оценка выгорания</h3>
+        <p>
+          Оценка эмоционального истощения, хронической усталости
+          и снижения профессиональной вовлечённости.
+        </p>
+
+        <div class="card-footer">
+          <span class="duration">12 вопросов</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card stress" [class.completed]="completed().stress" (click)="open('stress')">
+      <div class="card-visual">
+        <img src="mental-disorder.png" />
+      </div>
+
+      <div class="card-body">
+        <h3>Оценка уровня стресса</h3>
+        <p>
+          Анализ уровня стресса, давления дедлайнов
+          и субъективного ощущения перегруженности.
+        </p>
+
+        <div class="card-footer">
+          <span class="duration">10 вопросов</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card worklife" [class.completed]="completed()['work-life']" (click)="open('work-life')">
+      <div class="card-visual">
+        <img src="work-life-balance.png" />
+      </div>
+
+      <div class="card-body">
+        <h3>Баланс между работой и личной жизнью</h3>
+        <p>
+          Оценка баланса между рабочей нагрузкой,
+          восстановлением и личным временем.
+        </p>
+
+        <div class="card-footer">
+          <span class="duration">15 вопросов</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
