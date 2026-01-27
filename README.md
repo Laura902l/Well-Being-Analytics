@@ -220,34 +220,3 @@ Network requests are intercepted using `page.route`, ensuring:
 
 * full isolation from real backend
 * stable and repeatable tests
-
-
-
-## Race Conditions & Long Loading
-
-### Race Conditions
-
-* Backend uses `findOneAndUpdate` with `upsert`
-* Prevents duplicate survey entries
-* Verified via E2E test simulating double submit
-
-### Long Loading
-
-* Delayed API responses simulated in Playwright
-* UI behavior verified during slow network conditions
-
-
-
-## Code Coverage
-
-Code coverage is collected using **Jest**.
-
-### Achieved Coverage
-
-| Metric    | Coverage |
-|  | -- |
-| Lines     | 85%+     |
-| Branches  | 86%+     |
-| Functions | 87%+     |
-
-✔️ All logical services exceed the **80% requirement**
