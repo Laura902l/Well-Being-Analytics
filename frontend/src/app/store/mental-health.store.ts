@@ -27,7 +27,6 @@ export class MentalHealthStore {
   private _loading = signal(false);
   private _error = signal<string | null>(null);
   private _updatedAt = signal<Date | null>(null);
-
   private refreshSub?: Subscription;
 
   constructor(
@@ -142,9 +141,9 @@ export class MentalHealthStore {
 
   private getTitle(id: string): string {
     switch (id) {
-      case 'burnout': return 'Burnout';
-      case 'stress': return 'Stress';
-      case 'work-life': return 'Work–Life Balance';
+      case 'burnout': return 'Выгорание';
+      case 'stress': return 'Стресс';
+      case 'work-life': return 'Баланс между работой и личной жизнью';
       default: return id;
     }
   }
