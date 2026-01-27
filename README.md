@@ -16,6 +16,42 @@ It includes:
 The project was developed with a strong focus on **quality assurance, reliability, and test coverage**.
 
 
+## How to Run the Project
+
+### Backend
+
+```bash
+cd backend
+npm install
+npm start
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+ng serve
+```
+
+
+
+## How to Run Tests
+
+### Backend Tests
+
+```bash
+cd backend
+npx jest --coverage
+```
+
+### Frontend E2E Tests
+
+```bash
+cd frontend
+npx playwright install
+npx playwright test
+```
 
 ## Technology Stack
 
@@ -215,42 +251,3 @@ Code coverage is collected using **Jest**.
 | Functions | 87%+     |
 
 ✔️ All logical services exceed the **80% requirement**
-
-
-
-## ▶How to Run the Project
-
-### Backend
-
-```bash
-cd backend
-npm install
-npm start
-```
-
-### Frontend
-
-```bash
-cd frontend
-npm install
-ng serve
-```
-
-
-
-## ▶How to Run Tests
-
-### Backend Tests
-
-```bash
-cd backend
-npx jest --coverage
-```
-
-### Frontend E2E Tests
-
-```bash
-cd frontend
-npx playwright install
-npx playwright test
-```
