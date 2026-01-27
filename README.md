@@ -1,5 +1,5 @@
 # Mental Health Survey Application
----
+
 
 ## Project Description
 
@@ -15,7 +15,7 @@ It includes:
 
 The project was developed with a strong focus on **quality assurance, reliability, and test coverage**.
 
----
+
 
 ## Technology Stack
 
@@ -41,7 +41,7 @@ The project was developed with a strong focus on **quality assurance, reliabilit
 * Jest mocks (models, middleware)
 * Network interception (Playwright)
 
----
+
 
 ## Project Structure
 
@@ -70,7 +70,7 @@ backend/
 └── jest.config.js
 ```
 
----
+
 
 ### Frontend Structure
 
@@ -94,7 +94,7 @@ frontend/
 └── package.json
 ```
 
----
+
 
 ## Authentication & Authorization
 
@@ -118,9 +118,9 @@ frontend/
   * viewing own surveys
   * admin access to all surveys
 
----
 
-## 📊 Database Models
+
+## Database Models
 
 ### User Model
 
@@ -139,7 +139,7 @@ frontend/
 
 A **compound unique index** ensures that each user can submit only one survey per survey type.
 
----
+
 
 ## Testing Strategy
 
@@ -162,7 +162,7 @@ All database interactions are **mocked**, ensuring:
 * no real database usage
 * deterministic and fast tests
 
----
+
 
 ### End-to-End Testing (Frontend)
 
@@ -185,7 +185,7 @@ Network requests are intercepted using `page.route`, ensuring:
 * full isolation from real backend
 * stable and repeatable tests
 
----
+
 
 ## Race Conditions & Long Loading
 
@@ -200,7 +200,7 @@ Network requests are intercepted using `page.route`, ensuring:
 * Delayed API responses simulated in Playwright
 * UI behavior verified during slow network conditions
 
----
+
 
 ## Code Coverage
 
@@ -209,14 +209,14 @@ Code coverage is collected using **Jest**.
 ### Achieved Coverage
 
 | Metric    | Coverage |
-| --------- | -------- |
+|  | -- |
 | Lines     | 85%+     |
 | Branches  | 86%+     |
 | Functions | 87%+     |
 
 ✔️ All logical services exceed the **80% requirement**
 
----
+
 
 ## ▶How to Run the Project
 
@@ -236,9 +236,9 @@ npm install
 ng serve
 ```
 
----
 
-## ▶️ How to Run Tests
+
+## ▶How to Run Tests
 
 ### Backend Tests
 
