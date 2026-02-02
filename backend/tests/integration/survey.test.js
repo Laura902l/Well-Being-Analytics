@@ -92,5 +92,23 @@ describe('Survey routes', () => {
     expect(res.body).toEqual({ message: 'Survey saved' })
   })
 
-})
+  test('returns 500 when DB fails on save', async () => {
+    Survey.findOneAndUpdate.mockRejectedValue(new Error('DB error'));
 
+    const res = await request(app)
+      .post('/api/surveys')
+      .send({ surveyId: '1', data: {} });
+
+    expect(res.statusCode).toBe(500);
+  });
+  test('returns 500 when DB fails on user surveys fetch', async () => {
+    Survey.find.mockReturnValue({
+      sort: jest.fn().mockRejectedValue(new Error('DB error'))
+    });
+
+    const res = await request(app)
+      .get('/api/surveys/user123');
+
+    expect(res.statusCode).toBe(500);
+  });
+})
