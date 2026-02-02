@@ -460,13 +460,11 @@ export class AdminDashboardComponent implements OnInit, OnDestroy {
 
   store = inject(MentalHealthStore);
 
-  // UI STATE
   search = signal('');
   riskFilter = signal<'all' | Risk>('all');
 
   private searchTimer?: number;
 
-  // 🔥 MAIN TABLE LOGIC
   userTable = computed<UserRow[]>(() => {
     const q = this.search().toLowerCase();
     const risk = this.riskFilter();
@@ -509,7 +507,6 @@ export class AdminDashboardComponent implements OnInit, OnDestroy {
     return Array.from(map.values());
   });
 
-  // 📊 CHART DATA
   totalUsers = computed(() => this.userTable().length);
 
   riskDistribution = computed(() => {

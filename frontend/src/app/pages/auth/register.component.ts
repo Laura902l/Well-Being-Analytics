@@ -24,8 +24,6 @@ import { AuthLayoutComponent } from './auth-layout.component';
     >
 
       <form #form="ngForm" (ngSubmit)="register(form)" novalidate>
-
-        <!-- FULL NAME -->
         <label>
           Полное имя
           <input
@@ -47,7 +45,6 @@ import { AuthLayoutComponent } from './auth-layout.component';
           </div>
         </div>
 
-        <!-- USERNAME -->
         <label>
           Имя пользователя
           <input
@@ -76,7 +73,6 @@ import { AuthLayoutComponent } from './auth-layout.component';
           </div>
         </div>
 
-        <!-- PASSWORD -->
         <label>
           Пароль
           <input

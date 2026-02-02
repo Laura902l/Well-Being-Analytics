@@ -14,6 +14,31 @@
 
   <section class="grid">
 
+    <div *ngIf="loading()" class="loading">
+      Loading surveys...
+    </div>
+    <div *ngIf="!loading() && store.results().length === 0" class="empty">
+      No surveys
+    </div>
+    <div class="card burnout" *ngIf="!loading()" [class.completed]="completed().burnout" (click)="open('burnout')">
+      ...
+    </div>
+
+    <div class="card stress" *ngIf="!loading()" [class.completed]="completed().stress" (click)="open('stress')">
+      ...
+    </div>
+
+    <div class="card worklife" *ngIf="!loading()" [class.completed]="completed()['work-life']"
+      (click)="open('work-life')">
+      ...
+    </div>
+
+  </section>
+
+
+
+  <section class="grid">
+
     <div class="card burnout" [class.completed]="completed().burnout" (click)="open('burnout')">
 
       <div class="card-visual">

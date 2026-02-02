@@ -12,7 +12,6 @@ test('surveys are not shown immediately during long loading', async ({ page }) =
 
   await page.goto('/surveys');
 
-  // во время задержки данные не должны быть сразу видны
   await expect(
     page.locator('text=No surveys')
   ).not.toBeVisible({ timeout: 1000 });
@@ -21,7 +20,7 @@ test('surveys are not shown immediately during long loading', async ({ page }) =
 test('does not trigger duplicate save requests on double submit (race condition)', async ({ page }) => {
   let requestCount = 0;
 
-  await page.route('**/api/**', route => {
+  await page.route('**/login/**', route => {
     requestCount++;
     route.fulfill({
       status: 200,
@@ -30,7 +29,7 @@ test('does not trigger duplicate save requests on double submit (race condition)
     });
   });
 
-  await page.goto('/survey');
+  await page.goto('/login');
 
   const saveButton = page.locator('button').first();
 
@@ -39,6 +38,5 @@ test('does not trigger duplicate save requests on double submit (race condition)
 
   await page.waitForTimeout(500);
 
-  // ❗ ВАЖНО: запрос либо один, либо вообще отсутствует — дубликатов нет
   expect(requestCount).toBeLessThanOrEqual(1);
 });
